@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- entire web container -->
+    <div class="wrapper">
+        <!-- container holding all the player's content -->
+        <div class="music-container">
+            <!-- top controls -->
+            <div class="top-controls">
+                <!-- volume icon -->
+                <img src="img/volume.png" alt="">
+                <!-- menu icon -->
+                <img src="img/dots.png" alt="">
+            </div>
+
+            <!-- images and gifs section -->
+            <div class="images">
+                <img src="img/dancing.gif" alt="">
+            </div>
+
+            <!-- playing song details (artist and song name) -->
+            <div class="song-details">
+                <h3 class="song-name">numb</h3>
+                <h4 class="song-artist">Linkin Park</h4>
+            </div>
+
+            <!-- music progress bar -->
+            <div class="progress">
+                <p class="current-time">0:00</p>
+                <!-- entire progress bar -->
+                <div class="progress-bar">
+                    <!-- the bar show music current progress -->
+                    <div class="current-progress">
+
+                    </div>
+                </div>
+                <p class="total-duration">3:15</p>
+            </div>
+
+            <!-- music navigation controls -->
+            <div class="controls">
+                <div class="prev">
+                    <img src="img/previous.png" alt="">
+                </div>
+                <div class="play-pause">
+                    <img src="img/play.png" alt="">
+                </div>
+                <div class="next">
+                    <img src="img/next.png" alt="">
+                </div>
+                <div class="list">
+                    <img src="img/list.png" alt="">
+                </div>
+            </div>
+
+            <!-- list a portion of songs available in the player  -->
+            <div class="songs-list">
+                <!-- single song detail -->
+                <div class="single-song">
+                    <p class="song-name">Numb</p>
+                    <p class="song-artist">Linkin Park</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
