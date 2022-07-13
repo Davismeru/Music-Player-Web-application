@@ -1,3 +1,4 @@
+// all songs details array (Json data)
 const allMusic = [
     {
         src: "music/yt5s.com - Mayorkun - Mama (Official Video) (128 kbps).mp3",
@@ -83,3 +84,14 @@ const allMusic = [
         song: "ROSELLA (Cover)"
     }
 ]
+
+// display random gif when document loads
+function randomGif() {
+    // all gifs src array
+    const allGifs = ["img/dancing.gif", "img/dancing-2.gif", "img/dancing-3.gif", "img/dancing-4.gif"]
+    const gifContainer = document.querySelector('.images')
+    const randomGif = Math.floor(Math.random()*allGifs.length) //pic random Gif in the array
+    gifContainer.innerHTML = `<img src=${allGifs[randomGif]} alt="">`
+}
+
+randomGif()
