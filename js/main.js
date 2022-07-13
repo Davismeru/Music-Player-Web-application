@@ -97,13 +97,59 @@ function randomGif() {
 randomGif()
 
 // set and show playing music
-const randomMusic = Math.floor(Math.random()*allMusic.length) //pic random music in the allMusic array
+let randomMusic = Math.floor(Math.random()*allMusic.length) //pic random music in the allMusic array
+console.log(randomMusic);
 const audio = document.querySelector('#audio')
 const songName = document.querySelector('.song-name')
 const songArtist = document.querySelector('.song-artist')
-function playingMusicDetails() {
-    audio.src = allMusic[randomMusic].src
-    songName.innerHTML = allMusic[randomMusic].song
-    songArtist.innerHTML = allMusic[randomMusic].artist
+
+function playingMusicDetails(songItem) {
+    audio.src = allMusic[songItem].src
+    songName.innerHTML = allMusic[songItem].song
+    songArtist.innerHTML = allMusic[songItem].artist
 }
-playingMusicDetails()
+
+playingMusicDetails(randomMusic) //play random song
+
+// music controls functionality
+const controlsContainer = document.querySelector('.controls')
+const controls = controlsContainer.querySelectorAll('img')
+// play music function
+function playMusic(item) {
+    audio.play()
+    item.currentTarget.setAttribute('src', "img/pause.png")
+}
+
+// pause music function
+function pauseMusic(item) {
+    audio.pause()
+    item.currentTarget.setAttribute('src', "img/play.png")
+}
+
+controls.forEach((control) => {
+    control.addEventListener('click', (e)=> {
+        const clickedControl = e.currentTarget.getAttribute('src')
+        // play and pause music functionality
+        const playBtn = document.querySelector('#play')
+        if(clickedControl === "img/play.png") {
+            playMusic(e)
+        } else if(clickedControl === "img/pause.png") {
+            pauseMusic(e)
+        }
+
+        // next and previous button functionality
+        if(clickedControl === "img/next.png") {
+            randomMusic++
+            playingMusicDetails(randomMusic)
+            audio.play()
+            playBtn.setAttribute('src', "img/pause.png")
+            randomGif()
+        } else if(clickedControl === "img/previous.png") {          
+            randomMusic--
+            playingMusicDetails(randomMusic)
+            audio.play()
+            playBtn.setAttribute('src', "img/pause.png")
+            randomGif()
+        }
+    })
+})
