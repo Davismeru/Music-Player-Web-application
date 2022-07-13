@@ -90,8 +90,20 @@ function randomGif() {
     // all gifs src array
     const allGifs = ["img/dancing.gif", "img/dancing-2.gif", "img/dancing-3.gif", "img/dancing-4.gif"]
     const gifContainer = document.querySelector('.images')
-    const randomGif = Math.floor(Math.random()*allGifs.length) //pic random Gif in the array
-    gifContainer.innerHTML = `<img src=${allGifs[randomGif]} alt="">`
+    const randomGif = Math.floor(Math.random()*allGifs.length) //pic random Gif in the allGif array
+    gifContainer.innerHTML = `<img src=${allGifs[randomGif]} alt="img">`
 }
 
 randomGif()
+
+// set and show playing music
+const randomMusic = Math.floor(Math.random()*allMusic.length) //pic random music in the allMusic array
+const audio = document.querySelector('#audio')
+const songName = document.querySelector('.song-name')
+const songArtist = document.querySelector('.song-artist')
+function playingMusicDetails() {
+    audio.src = allMusic[randomMusic].src
+    songName.innerHTML = allMusic[randomMusic].song
+    songArtist.innerHTML = allMusic[randomMusic].artist
+}
+playingMusicDetails()
