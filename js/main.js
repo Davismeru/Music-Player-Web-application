@@ -149,18 +149,29 @@ controls.forEach((control) => {
         // next and previous button functionality
         if(clickedControl === "img/next.png") {
             randomMusic++
-            console.log(randomMusic);
             arrayLimit()
             playingMusicDetails(randomMusic)
             audio.play()
             playBtn.setAttribute('src', "img/pause.png")
+            randomGif()
         } else if(clickedControl === "img/previous.png") {          
             randomMusic--
-            console.log(randomMusic);
             arrayLimit()
             playingMusicDetails(randomMusic)
             audio.play()
             playBtn.setAttribute('src', "img/pause.png")
+            randomGif()
         }
     })
+})
+
+// all songs list at bottom of player 
+const songListContainer = document.querySelector('.songs-list')
+allMusic.map((singleSong) => {
+    songListContainer.innerHTML += `
+    <div class="single-song">
+        <p class="song-name">${singleSong.song}</p>
+        <p class="song-artist">${singleSong.artist}</p>
+    </div>
+    `
 })
