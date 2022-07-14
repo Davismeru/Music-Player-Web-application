@@ -137,19 +137,30 @@ controls.forEach((control) => {
             pauseMusic(e)
         }
 
+        // check that music selected is within the array
+        function arrayLimit() {
+            if(randomMusic<0) {
+                randomMusic = allMusic.length-1
+            } else if(randomMusic > allMusic.length-1) {
+                randomMusic=0
+            }
+        }
+
         // next and previous button functionality
         if(clickedControl === "img/next.png") {
             randomMusic++
+            console.log(randomMusic);
+            arrayLimit()
             playingMusicDetails(randomMusic)
             audio.play()
             playBtn.setAttribute('src', "img/pause.png")
-            randomGif()
         } else if(clickedControl === "img/previous.png") {          
             randomMusic--
+            console.log(randomMusic);
+            arrayLimit()
             playingMusicDetails(randomMusic)
             audio.play()
             playBtn.setAttribute('src', "img/pause.png")
-            randomGif()
         }
     })
 })
