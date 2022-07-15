@@ -162,6 +162,18 @@ controls.forEach((control) => {
             playBtn.setAttribute('src', "img/pause.png")
             randomGif()
         }
+
+        // list button 
+        const listHeader = document.querySelector('.list-header')
+        if(clickedControl === "img/list.png") {
+            songListContainer.classList.add('full-list')
+            listHeader.style.display = "flex"
+        }
+        const closeBtn = document.querySelector('.close-list')
+        closeBtn.addEventListener('click', ()=> {
+            songListContainer.classList.remove('full-list')
+            listHeader.style.display = "none"
+        })
     })
 })
 
