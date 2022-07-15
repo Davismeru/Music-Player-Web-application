@@ -126,11 +126,11 @@ function pauseMusic(item) {
     item.currentTarget.setAttribute('src', "img/play.png")
 }
 
+const playBtn = document.querySelector('#play')
 controls.forEach((control) => {
     control.addEventListener('click', (e)=> {
         const clickedControl = e.currentTarget.getAttribute('src')
         // play and pause music functionality
-        const playBtn = document.querySelector('#play')
         if(clickedControl === "img/play.png") {
             playMusic(e)
         } else if(clickedControl === "img/pause.png") {
@@ -174,4 +174,23 @@ allMusic.map((singleSong) => {
         <p class="song-artist">${singleSong.artist}</p>
     </div>
     `
+})
+
+// play clicked song functionality
+const allSongs = document.querySelectorAll('.single-song')
+allSongs.forEach((eachSong) => {
+    eachSong.addEventListener('click', (e) => {
+        const selectedSong = e.currentTarget.children[0].innerHTML
+        const selectedSongArtist = e.currentTarget.children[1].innerHTML
+        const filteredSong = allMusic.filter((singleSong) => {
+            if(singleSong.song == selectedSong) {
+                return singleSong
+            }
+        })
+    audio.src = filteredSong[0].src
+    songName.innerHTML = filteredSong[0].song
+    songArtist.innerHTML = filteredSong[0].artist
+    audio.play()
+    playBtn.setAttribute('src', "img/pause.png")
+    })
 })

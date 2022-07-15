@@ -125,6 +125,11 @@
 .single-song {
     display: flex;
     border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+}
+
+.single-song:hover {
+    color: grey;
 }
 
 .single-song p {
