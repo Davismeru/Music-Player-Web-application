@@ -41,10 +41,6 @@
     margin: 0 10px;
 }
 
-.top-controls img {
-    width: 25px;
-}
-
 /* images and gifs section */
 .images {
     height: 40%;
@@ -113,8 +109,8 @@
     margin-bottom: 12px;
 }
 
-.controls img {
-    width: 25px;
+.controls i:hover {
+    color: grey;
 }
 
 /* songs list (list at the bottom of the player) */

@@ -26,27 +26,27 @@ playingMusicDetails(randomMusic) //play random song
 
 // music controls functionality
 const controlsContainer = document.querySelector('.controls')
-const controls = controlsContainer.querySelectorAll('img')
+const controls = controlsContainer.querySelectorAll('i')
 // play music function
 function playMusic(item) {
     audio.play()
-    item.currentTarget.setAttribute('src', "img/pause.png")
+    item.currentTarget.setAttribute('class', "fa-solid fa-pause")
 }
 
 // pause music function
 function pauseMusic(item) {
     audio.pause()
-    item.currentTarget.setAttribute('src', "img/play.png")
+    item.currentTarget.setAttribute('class', "fa-solid fa-play")
 }
 
 const playBtn = document.querySelector('#play')
 controls.forEach((control) => {
     control.addEventListener('click', (e)=> {
-        const clickedControl = e.currentTarget.getAttribute('src')
+        const clickedControl = e.currentTarget.getAttribute('class')
         // play and pause music functionality
-        if(clickedControl === "img/play.png") {
+        if(clickedControl === "fa-solid fa-play") {
             playMusic(e)
-        } else if(clickedControl === "img/pause.png") {
+        } else if(clickedControl === "fa-solid fa-pause") {
             pauseMusic(e)
         }
 
@@ -60,25 +60,25 @@ controls.forEach((control) => {
         }
 
         // next and previous button functionality
-        if(clickedControl === "img/next.png") {
+        if(clickedControl === "fa-solid fa-forward") {
             randomMusic++
             arrayLimit()
             playingMusicDetails(randomMusic)
             audio.play()
-            playBtn.setAttribute('src', "img/pause.png")
+            playBtn.setAttribute('class', "fa-solid fa-pause")
             randomGif()
-        } else if(clickedControl === "img/previous.png") {          
+        } else if(clickedControl === "fa-solid fa-backward") {          
             randomMusic--
             arrayLimit()
             playingMusicDetails(randomMusic)
             audio.play()
-            playBtn.setAttribute('src', "img/pause.png")
+            playBtn.setAttribute('class', "fa-solid fa-pause")
             randomGif()
         }
 
         // list button 
         const listHeader = document.querySelector('.list-header')
-        if(clickedControl === "img/list.png") {
+        if(clickedControl === "fa-solid fa-list") {
             songListContainer.classList.add('full-list')
             listHeader.style.display = "flex"
         }
