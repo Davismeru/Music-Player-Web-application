@@ -7,13 +7,17 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 /* wrapper*/
 .wrapper {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    /* background: url(../img/icons8-team-7LNatQYMzm4-unsplash.jpg) no-repeat; */
+    justify-content: left;
+    background: url(../img/c-d-x-PDX_a_82obo-unsplash.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -22,12 +26,12 @@
     width: 300px;
     height: 450px;
     box-shadow: 1px 1px 5px #000;
-    background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     position: relative;
+    margin-left: 20px;
 }
 
 /* top-controls */
@@ -94,9 +98,10 @@
 /* music current progress bar */
 .current-progress {
     height: 100%;
-    width: 50%;
-    background: lightcoral;
+    width: 0; /*updated using javascript*/
+    background: #dda24b;
     border-radius: 4px;
+    transition-timing-function: ease;
 }
 
 /* music navigation controls */
@@ -115,7 +120,7 @@
 /* songs list (list at the bottom of the player) */
 .songs-list {
     align-self: center;
-    box-shadow: 1px 1px 4px grey;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     font-size: 10px;
     width: 70%;
     height: 20%;
@@ -149,7 +154,7 @@
 /* single-song detail */
 .single-song {
     display: flex;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 

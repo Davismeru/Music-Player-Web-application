@@ -88,7 +88,7 @@ const allMusic = [
 // display random gif when document loads
 function randomGif() {
     // all gifs src array
-    const allGifs = ["img/dancing.gif", "img/dancing-2.gif", "img/dancing-3.gif", "img/dancing-4.gif"]
+    const allGifs = ["img/dancing.gif", "img/dancing-2.gif", "img/dancing-3.gif", "img/dancing-4.gif", "img/dancing-5.gif", "img/dancing-6.gif"]
     const gifContainer = document.querySelector('.images')
     const randomGif = Math.floor(Math.random()*allGifs.length) //pic random Gif in the allGif array
     gifContainer.innerHTML = `<img src=${allGifs[randomGif]} alt="img">`
@@ -205,4 +205,35 @@ allSongs.forEach((eachSong) => {
     audio.play()
     playBtn.setAttribute('src', "img/pause.png")
     })
+})
+
+// progress bar functionality
+const progressUpdateBar = document.querySelector('.current-progress')
+audio.addEventListener('timeupdate', (e)=> {
+    const songDuration = e.target.duration
+    const songTotalTime = e.target.currentTime
+    const barPosition = (songTotalTime/songDuration) * 100
+    progressUpdateBar.style.width = `${barPosition}%`
+
+    // show music current time and music duration
+    const currentTimeContainer = document.querySelector('.current-time')
+    const totalDurationContainer = document.querySelector('.total-duration')
+    audio.addEventListener('loadeddata', (e)=> {
+        // display correct music total time/duration
+        const songTotalTime = e.target.duration
+        const totalTimeInMins = Math.floor(songTotalTime / 60)
+        let totalTimeInSecs = Math.floor(songTotalTime % 60)
+        if(totalTimeInSecs<10) {
+            totalTimeInSecs = `0${totalTimeInSecs}`
+        }
+        totalDurationContainer.innerText = `${totalTimeInMins}:${totalTimeInSecs}`
+    })
+    // display correct music current time
+    const songCurrentTime = e.target.currentTime
+    const currentTimeInMins = Math.floor(songCurrentTime / 60)
+    let currentTimeInSecs = Math.floor(songCurrentTime % 60)
+    if(currentTimeInSecs<10) {
+        currentTimeInSecs = `0${currentTimeInSecs}`
+    }
+    currentTimeContainer.innerText = `${currentTimeInMins}:${currentTimeInSecs}`
 })
