@@ -82,5 +82,47 @@ const allMusic = [
         src: "music/Jamhuri Jam Sessions SWIGA - ROSELLA (Cover).mp3",
         artist: "Jamhuri Jam Sessions SWIGA",
         song: "ROSELLA (Cover)"
+    },
+
+    {
+        src: "music/y2mate.com - LUMX Gabry Ponte  Monster Official Music Video.mp3",
+        artist: "Gabry Ponte",
+        song: "Monster"
+    },
+
+    {
+        src: "music/y2mate.com - Linkin Park  In The End Mellen Gi  Tommee Profitt Remix.mp3",
+        artist: "Tommee Profitt",
+        song: "Linkin Park  In The End cover"
+    },
+
+    {
+        src: "music/y2mate.com - eminem  stan lofi remix slowed  reverb.mp3",
+        artist: "eminem",
+        song: "stan lofi remix slowed"
+    },
+
+    {
+        src: "music/y2mate.com - Alan Walker  The Spectre LUMX Remix.mp3",
+        artist: "Alan Walker",
+        song: "The Spectre LUMX Remix"
+    },
+
+    {
+        src: "music/y2mate.com - Avicii  Wake Me Up LUMX Tribute Remix.mp3",
+        artist: "Avicii",
+        song: "Wake Me Up LUMX Tribute Remix"
+    },
+
+    {
+        src: "music/y2mate.com - TheFatRatRise Up  Remix .mp3",
+        artist: "The Fat Rat",
+        song: "Rise Up  Remix"
+    },
+
+    {
+        src: "music/y2mate.com - TheFatRat  Fly Away feat Anjulie.mp3",
+        artist: "The Fat Rat ft Anjulie",
+        song: "Fly Away"
     }
 ]
