@@ -116,7 +116,7 @@ allSongs.forEach((eachSong) => {
     songName.innerHTML = filteredSong[0].song
     songArtist.innerHTML = filteredSong[0].artist
     audio.play()
-    playBtn.setAttribute('src', "img/pause.png")
+    playBtn.setAttribute('class', "fa-solid fa-pause")
     })
 })
 
@@ -149,4 +149,14 @@ audio.addEventListener('timeupdate', (e)=> {
         currentTimeInSecs = `0${currentTimeInSecs}`
     }
     currentTimeContainer.innerText = `${currentTimeInMins}:${currentTimeInSecs}`
+})
+
+// change background
+const backgroundBtn = document.querySelector('.fa-images')
+const wrapper = document.querySelector('.wrapper')
+let count = 1
+backgroundBtn.addEventListener('click', ()=> {
+    count ++
+    console.log(count);
+    wrapper.style.background = `url(../img/background-${count}.jpg) no-repeat`
 })
