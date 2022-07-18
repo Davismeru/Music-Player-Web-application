@@ -173,7 +173,7 @@ i:hover {
 @media screen and (max-width:380px) {
     .music-container {
         width: 100%;
-        margin: 5px;
+        margin: 0;
         height: 100%;
     }
 }

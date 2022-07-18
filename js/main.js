@@ -40,6 +40,15 @@ function pauseMusic(item) {
 }
 
 const playBtn = document.querySelector('#play')
+// check that music selected is within the array
+function arrayLimit() {
+    if(randomMusic<0) {
+        randomMusic = allMusic.length-1
+    } else if(randomMusic > allMusic.length-1) {
+        randomMusic=0
+    }
+}
+
 controls.forEach((control) => {
     control.addEventListener('click', (e)=> {
         const clickedControl = e.currentTarget.getAttribute('class')
@@ -48,15 +57,6 @@ controls.forEach((control) => {
             playMusic(e)
         } else if(clickedControl === "fa-solid fa-pause") {
             pauseMusic(e)
-        }
-
-        // check that music selected is within the array
-        function arrayLimit() {
-            if(randomMusic<0) {
-                randomMusic = allMusic.length-1
-            } else if(randomMusic > allMusic.length-1) {
-                randomMusic=0
-            }
         }
 
         // next and previous button functionality
@@ -151,12 +151,28 @@ audio.addEventListener('timeupdate', (e)=> {
     currentTimeContainer.innerText = `${currentTimeInMins}:${currentTimeInSecs}`
 })
 
-// change background
-const backgroundBtn = document.querySelector('.fa-images')
-const wrapper = document.querySelector('.wrapper')
-let count = 1
-backgroundBtn.addEventListener('click', ()=> {
-    count ++
-    console.log(count);
-    wrapper.style.background = `url(../img/background-${count}.jpg) no-repeat`
+// shuffle music functionality
+const shuffleContainer = document.querySelector('.shuffle')
+const shuffleBtn = shuffleContainer.querySelector('.fa-repeat')
+shuffleBtn.addEventListener('click', ()=> {
+    shuffleIcon = shuffleBtn.getAttribute('class')
+    if(shuffleIcon == "fa-solid fa-repeat") {
+        shuffleBtn.setAttribute('class', "fa-solid fa-shuffle")
+    } else if(shuffleIcon == "fa-solid fa-shuffle") {
+        shuffleBtn.setAttribute('class', "fa-solid fa-repeat")
+    }
+})
+
+audio.addEventListener('ended', ()=> {
+    shuffleIcon = shuffleBtn.getAttribute('class')
+    if(shuffleIcon == "fa-solid fa-repeat") {
+        audio.play()
+    } else if(shuffleIcon == "fa-solid fa-shuffle") {
+        randomMusic++
+        arrayLimit()
+        playingMusicDetails(randomMusic)
+        audio.play()
+        playBtn.setAttribute('class', "fa-solid fa-pause")
+        randomGif()
+    }
 })
