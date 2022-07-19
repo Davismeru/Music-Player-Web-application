@@ -176,3 +176,13 @@ audio.addEventListener('ended', ()=> {
         randomGif()
     }
 })
+
+// change background functionality
+const allBgs = ['img/background-1.jpg', 'img/background-2.jpg', 'img/background-3.jpg', 'img/background-4.jpg', 'img/background-5.jpg']
+const bgBtn = document.querySelector('.fa-images')
+const wrapper= document.querySelector('.wrapper')
+bgBtn.addEventListener('click', ()=> {
+    let randomBg = Math.floor(Math.random()*allBgs.length)
+    wrapper.style.background = `url(${allBgs[randomBg]}) no-repeat`
+    wrapper.style.backgroundSize = 'cover'
+})

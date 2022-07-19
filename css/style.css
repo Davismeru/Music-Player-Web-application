@@ -16,9 +16,9 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     background: url(../img/background-1.jpg) no-repeat;
     background-size: cover;
+    transition: 2s ease-in-out;
 }
 
 /* music container */
@@ -167,6 +167,7 @@ i:hover {
 @media screen and (max-width:600px) {
     .wrapper {
         justify-content: center;
+        background-position: center center;
     }
 }
 
