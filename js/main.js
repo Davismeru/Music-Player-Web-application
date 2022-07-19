@@ -1,7 +1,7 @@
 // display random gif when document loads
 function randomGif() {
     // all gifs src array
-    const allGifs = ["img/dancing.gif", "img/dancing-2.gif", "img/dancing-3.gif", "img/dancing-4.gif", "img/dancing-5.gif", "img/dancing-6.gif"]
+    const allGifs = ["img/dancing.gif", "img/dancing-2.gif", "img/dancing-3.gif", "img/dancing-4.gif", "img/dancing-5.gif", "img/dancing-6.gif", "img/dancing-7.gif"]
     const gifContainer = document.querySelector('.images')
     const randomGif = Math.floor(Math.random()*allGifs.length) //pic random Gif in the allGif array
     gifContainer.innerHTML = `<img src=${allGifs[randomGif]} alt="img">`
@@ -186,3 +186,10 @@ bgBtn.addEventListener('click', ()=> {
     wrapper.style.background = `url(${allBgs[randomBg]}) no-repeat`
     wrapper.style.backgroundSize = 'cover'
 })
+
+// preloader functionality
+const preloader = document.querySelector('.preloader')
+function hidePreloader() {
+    preloader.classList.add('hide-preloader')
+}
+setTimeout(hidePreloader, 8000)
