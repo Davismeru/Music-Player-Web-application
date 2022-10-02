@@ -190,19 +190,9 @@ i:hover {
     text-align: center;
 }
 
-.graffiti {
-    margin-bottom: 20px;
-    animation: appear 2s ease 0.5s infinite;
-}
-
-.preloader p {
-    margin-bottom: 20px;
-    animation: appear 2s ease 0.8s infinite;
-}
-
 .preloader h2 {
     margin-bottom: 20px;
-    animation: appear 2s ease 1.1s infinite;
+    animation: appear 2s ease infinite;
 }
 
 /* preloader animation */

@@ -1,7 +1,7 @@
 // display random gif when document loads
 function randomGif() {
     // all gifs src array
-    const allGifs = ["img/dancing.gif", "img/dancing-2.gif", "img/dancing-3.gif", "img/dancing-4.gif", "img/dancing-5.gif", "img/dancing-6.gif", "img/dancing-7.gif"]
+    const allGifs = ["img/dancing.gif", "img/dancing-2.gif", "img/dancing-3.gif", "img/dancing-4.gif", "img/dancing-5.gif", "img/dancing-6.gif", "img/dancing-7.gif", "img/dancing-8.gif","img/dancing-9.gif","img/dancing-10.gif","img/dancing-11.gif","img/dancing-12.gif","img/dancing-13.gif"]
     const gifContainer = document.querySelector('.images')
     const randomGif = Math.floor(Math.random()*allGifs.length) //pic random Gif in the allGif array
     gifContainer.innerHTML = `<img src=${allGifs[randomGif]} alt="img">`
