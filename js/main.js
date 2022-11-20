@@ -192,4 +192,4 @@ const preloader = document.querySelector('.preloader')
 function hidePreloader() {
     preloader.classList.add('hide-preloader')
 }
-setTimeout(hidePreloader, 8000)
+setTimeout(hidePreloader, 100)

@@ -19,6 +19,23 @@
     background: url(../img/background-1.jpg) no-repeat;
     background-size: cover;
     transition: 2s ease-in-out;
+    position: relative;
+}
+
+/* big text */
+.big-text {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: end;
+    padding-right: 40px;
+}
+
+.big-text h1 {
+    font-family: 'Rubik Microbe', cursive;
+    font-size: 4rem;
+    color: #9c28287a;
+    text-shadow: 1px 0px 4px #000;
 }
 
 /* music container */
@@ -217,6 +234,10 @@ i:hover {
     .wrapper {
         justify-content: center;
         background-position: center center;
+    }
+
+    .big-text {
+        display: none;
     }
 
     .graffiti {
