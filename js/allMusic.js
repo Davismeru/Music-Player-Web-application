@@ -124,5 +124,11 @@ const allMusic = [
         src: "music/y2mate.com - TheFatRat  Fly Away feat Anjulie.mp3",
         artist: "The Fat Rat ft Anjulie",
         song: "Fly Away"
+    },
+
+    {
+        src: "music/y2mate.com - топ чарт.mp3",
+        artist: "топ",
+        song: "чарт"
     }
 ]
